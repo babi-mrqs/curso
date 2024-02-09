@@ -1,0 +1,5 @@
+lapis, 88, 0.99
+caneta,93,1.90
+caderno,36,20
+canetinha,45,10.90
+lapis de cor,26,16

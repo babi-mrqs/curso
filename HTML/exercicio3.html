@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color:bisque;
+        margin: 0;
+        padding: 20px;
+    }
+    h1{
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        margin-top: 50px;
+        color: #333;
+    }
+    .conteiner{
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px #333;
+    }
+    
+    .form{
+        position: relative;
+        right: 6px;
+        left: 6px;
+        bottom: 10px;
+        border: 2px black;
+        border-radius: 3%;
+        margin-bottom: 20px;
+    }
+    label{
+        display: block;
+    }
+    .form input{
+        width: 94%;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    .form select{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+    button{
+        display: block;
+        width: 100%;
+        padding: 20px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        position: relative;
+        right: 6px;
+        left: 6px;
+        bottom: 10px;
+    }
+
+</style>
+
+
+    <head>
+        <title>Formulário de cadastro de Clientes</title>
+    </head>
+    <body>
+        <div>
+            <h1>Formulário de Cadastro de Clientes</h1>
+        </div>
+        <div class="conteiner">
+            <form action="">
+                <div class="form">
+                    <label for="Nome">Nome:</label>
+                    <input type="text" name="Nome" id="Nome">
+                </div>
+                <div class="form">
+                    <label for="Email">E-mail:</label>
+                    <input type="email" name="E-mail" id="email">
+                </div>
+                <div class="form">
+                    <label for="Telefone">Telefone:</label>
+                    <input type="tel" name="Telefone" Id="Telefone">
+                </div>
+                <div class="form">
+                    <label for="Cidade">Cidade:</label>
+                    <select name="Cidade" id="Cidade">
+                        <option1 value="Cidade1">Cidade 1</option>
+                        <option2 value="Cidade2">Cidade 2</option>
+                        <option3 value="Cidade3">Cidade 3</option>    
+                    </select>
+                </div>
+                <div>
+                    <h2>
+                        <button type="submit">Cadastrar</button>
+                    </h2>
+                </div>
+            </form>
+
+        </div>
+    </body>
+</html>

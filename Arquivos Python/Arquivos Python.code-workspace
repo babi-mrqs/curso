@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../aula python"
+		},
+		{
+			"path": "../ESTOQUE"
+		},
+		{
+			"path": "../Algoritimos_python"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Arquivos Python",
+		"liveServer.settings.port": 5501
+	}
+}
