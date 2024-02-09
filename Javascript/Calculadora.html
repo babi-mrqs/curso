@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body{
+            background-color: #fff;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 800px;
+            margin-right: 800px;
+            margin-top: 80px;
+            justify-content: center;
+            font-size: 30px;
+            color: bisque;
+            border: solid black 1px;
+            border-radius: 3px;
+            background-color: rgb(238, 232, 222);
+        }
+        button{
+            font-size: 30px;
+            background-color: rgb(255, 222, 196);
+            color: rgb(31, 6, 6);
+            border: solid 1px rgb(28, 26, 26);
+            border-radius: 3px;
+            width: 50px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+        .tela{
+            background-color: #fff;
+            color: black;
+            border: solid black 2px;
+            margin-left: 600px;
+            margin-right: 600px;
+            margin-bottom: 10px;
+            margin-top: 15px;
+            width: 10px;
+            padding: 10;
+        }
+    </style>
+
+    <head>
+        <title>Calculadora</title>
+    </head>
+    <body>
+        <div class="container">
+            <div  class="tela">
+            <input type="text" name="tela" id="tela" disabled>
+            </div>
+            <div class="botoes">
+                <button type="button" id="7" value="7" onclick="addToDisplay('7')"> 7 </button>
+                <button type="button" id="8" value="8" onclick="addToDisplay('8')"> 8 </button>
+                <button type="button" id="9" value="9" onclick="addToDisplay('9')"> 9 </button>
+                <button type="button" id="divide" value="divide" onclick="addToDisplay('/')">  /  </button>
+                <br>
+
+                <button type="button" id="4" value="4" onclick="addToDisplay('4')"> 4 </button>
+                <button type="button" id="5" value="5" onclick="addToDisplay('5')"> 5 </button>
+                <button type="button" id="6" value="6" onclick="addToDisplay('67')"> 6 </button>
+                <button type="button" id="mult" value="mult" onclick="addToDisplay('*')">  *  </button>
+                <br>
+
+                <button type="button" id="1" value="1" onclick="addToDisplay('1')"> 1 </button>
+                <button type="button" id="2" value="2" onclick="addToDisplay('72')"> 2 </button>
+                <button type="button" id="3" value="3" onclick="addToDisplay('3')"> 3 </button>
+                <button type="button" id="menos" value="menos" onclick="addToDisplay('-')">  -  </button>
+                <br>
+
+                <button type="button" id="0" value="0" onclick="addToDisplay('0')"> 0 </button>
+                <button type="button" id="ponto" value="ponto" onclick="addToDisplay('.')">   .   </button>
+                <button type="button" id="igual" value="igual" onclick="calculate('7')">  =  </button>
+                <button type="button" id="mais" value="mais" onclick="addToDisplay('+')"> + </button>
+                <br>
+                <button type="button" value ="C" id="C" onclick="clearDisplay()">C</button>
+            </div>
+        </div>
+        <script>
+            let lastOperator = false;
+            function addToDisplay(value){
+                const display = document.getElementById('tela');
+                const lastChar = display.value.charAt(display.value.lengh - 1);
+
+                if(!isOperator(value) || (isOperator(value) && !isOperator(lastChar))){
+                    display.value += value
+                    lastOperator = isOperator(value);
+                }
+            }
+
+            function isOperator(value){
+                return value === '+' || value === '-' || value === '*' || value === '/';
+            }
+
+            function clearDisplay(){
+                document.getElementById('tela').value = ""
+                lastOperator = false;
+            }
+
+            function calculate(){
+                const display = document.getElementById('tela');
+                const expression = display.value;
+
+                try{
+                    let result = eval(expression);
+                    display.value = result;
+                } catch(error){
+                        display.value = "Erro";
+                        console.log(error);
+                }
+                
+                lastOperator = false
+                
+            }
+
+        </script>
+    </body>
+</html>

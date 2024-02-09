@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+
+
+<form action="/edit" method="post">
+<p>Titulo: </p>
+    <input type="hidden" name="id" value="{{postagens.id}}">
+    <input type="text" name="titulo" value="{{postagens.titulo}}">
+    <p>Conteúdo: </p>
+    <textarea name="conteudo" > {{postagens.conteudo}}</textarea>
+
+    <button type="submit" onclick=atualizar()>Atualizar postagem</button>
+</form>
+<script>
+    function atualizar(){
+        if(confirm("Você tem certeza que deseja editar a postagem?")){
+            window.location.href = `/edit/`{where: {'id': req.params.id};
+        }
+    }
+
+</script>
+
+</body>
+</html>

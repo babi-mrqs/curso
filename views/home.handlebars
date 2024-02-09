@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<body>
+<br>
+<br>
+<br>
+
+<hr>
+
+<div class="container-sm">
+<a href="/cadastrar"><button class="btn btn-outline-primary" style="float: right;">Cadastrar Funcionario</button></a>
+</div>
+<div class="container-md">
+<h1>Relação de Funcionários</h1>
+</div>
+<div class="container-sm">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Cargo</th>
+            <th scope="col" style="padding-right: 1%;"> Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each funcionario}}
+        <tr>
+            <th>{{nome}}</th>
+            <th>{{email}}</th>
+            <th>{{telefone}}</th>
+            <th>{{cargo}}</th>
+            <th><a href="/editar/{{id}}"><button class="btn btn-outline-primary">Editar</button></a> <button class="btn btn-outline-primary" onclick="Deletar({{id}})">Deletar</button> </th>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+
+
+
+
+</body>
+
+<script>
+
+    function Deletar(id){
+        var resposta = confirm("Você realmente quer deletar?");
+
+        if(resposta){
+            window.location.href = `/deletar/${id}`;
+        }
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,12 @@
+COMO COMEÇAR PROJETO DJANGO
+
+py -m venv .venv   (criar ambiente virtual)
+./.venv/Scripts/activate  (ativar ambiente)
+pip install django  (instalar django)
+django-admin startproject setup .     (criar projeto)
+py manage.py startapp estoque      (cria app)
+py manage.py runserver           (rodar servidor)
+
+
+py manage.py makemigrations      (fazer migrações)
+py manage.py migrate     (Migrar)

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    
+<hr>
+
+<a href="/cad"><button>Cadastrar Postagem</button></a>
+<h1>Lista de Posts</h1>
+
+{{#each posts}}
+<div>
+</div>
+    <small>{{createdAt}}</small>
+    <h2>{{titulo}}</h2>
+    <p>{{conteudo}}</p>
+    <button onclick="Deletar({{id}})">Deletar</button>
+    <a href="/editar/{{id}}"><button>Editar</button></a>
+
+{{/each}}
+
+</body>
+</html>
+
+<script>
+
+    function Deletar(id){
+        var resposta = confirm("Você realmente quer deletar?");
+
+        if(resposta){
+            window.location.href = `/deletar/${id}`;
+        }
+    }
+</script>
